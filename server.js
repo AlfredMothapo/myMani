@@ -13,7 +13,7 @@ app.get('*', (req, res) => {
   res.send('Hello world')
 })
 app.put("*",(req,res) => {
-  res.send(req.body);
+  res.send("Hello there");
 })
 
 app.listen(port, () => {
