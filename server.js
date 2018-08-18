@@ -17,8 +17,7 @@ app.put("*",(req,res) => {
 });
 app.post("/first",(req,res) => {
   var response = {
-    "prompt" : `Welcome to mymani :: 
-    Please enter your password`,
+    "prompt" : `Welcome to mymani : Please enter your password`,
     "end" : false
    };
    console.log(req.body);
