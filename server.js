@@ -16,10 +16,22 @@ app.put("*",(req,res) => {
   res.send("Hello there");
 });
 app.post("/first",(req,res) => {
-  var response = {
-    "prompt" : `Welcome to mymani : Please enter your password`,
-    "end" : false
-   };
+  var response;
+  if(req.body.userInput) {
+    response = {
+        "prompt" : `Select menu option :
+        1.Check Balance
+        2.Make transaction
+        3.Exit`,
+        "end" : false
+      };
+  }
+  else {
+    response = {
+      "prompt" : `Welcome to mymani : Please enter your password`,
+      "end" : false
+     };
+  }
    console.log(req.body);
    res.send(response);
 });
