@@ -8,13 +8,20 @@ const port = process.env.PORT || 3030
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
-
 app.get('*', (req, res) => {
+  console.log(req.body);
   res.send('Hello world')
 })
 app.put("*",(req,res) => {
   res.send("Hello there");
-})
+});
+app.post("/first",(req,res) => {
+  var response = {
+    "prompt" : "Please enter your name",
+    "end" : false
+   };
+   res.send(response);
+});
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)
