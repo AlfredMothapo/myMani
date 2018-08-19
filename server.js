@@ -27,6 +27,13 @@ app.post("/first",(req,res) => {
         "nextPage":"Page2"
       };
   }
+  if(req.body.nextPage === "Page2" && req.body.userInput === "2") {
+    response = {
+      "prompt" : `Enter user cell number :`,
+      "end" : false,
+      "nextPage":"endPage"
+    };
+  }
   else {
     response = {
       "prompt" : `Welcome to mymani : Please enter your password`,
