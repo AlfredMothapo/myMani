@@ -18,7 +18,7 @@ app.put("*",(req,res) => {
 app.post("/first",(req,res) => {
   var response;
   // Check user input, validate the user password and return balance.
-  if(req.body.userInput==="mymani") {
+  if(req.body.userInput==="1234") {
     response = {
       "prompt" : "",
       "end" : true,
