@@ -23,7 +23,8 @@ app.post("/first",(req,res) => {
         1.Check Balance
         2.Make transaction
         3.Exit`,
-        "end" : false
+        "end" : false,
+        "nextPage":"Page2"
       };
   }
   else {
