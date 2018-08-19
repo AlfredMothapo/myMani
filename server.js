@@ -29,8 +29,7 @@ app.post("/first",(req,res) => {
     // wrong password
     response = {
       "prompt" : "Please enter valid password",
-      "end" : true,
-      "nextPage":"Page2"
+      "end" : false,
     }
   }
    console.log(req.body);
