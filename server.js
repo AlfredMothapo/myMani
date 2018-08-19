@@ -17,31 +17,27 @@ app.put("*",(req,res) => {
 });
 app.post("/first",(req,res) => {
   var response;
-  if(req.body.userInput) {
+  // Check user input, validate the user password and return balance.
+  if(req.body.userInput==="mymani") {
     response = {
-        "prompt" : `Select menu option :
-        1.Check Balance
-        2.Make transaction
-        3.Exit`,
-        "end" : false,
-        "nextPage":"Page2"
-      };
-  }
-  if(req.body.nextPage === "Page2" && req.body.userInput === "2") {
-    response = {
-      "prompt" : `Enter user cell number :`,
-      "end" : false,
-      "nextPage":"endPage"
-    };
+      "prompt" : "",
+      "end" : true,
+      "nextPage":"Page2"
+    }
   }
   else {
+    // wrong password
     response = {
-      "prompt" : `Welcome to mymani : Please enter your password`,
-      "end" : false
-     };
+      "prompt" : "Please enter valid password",
+      "end" : true,
+      "nextPage":"Page2"
+    }
   }
    console.log(req.body);
    res.send(response);
+});
+app.post("/second",(req,res) =>{
+  // Check user input, make transaction or exit.
 });
 
 app.listen(port, () => {
